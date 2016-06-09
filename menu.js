@@ -30,6 +30,14 @@ let template = [{
         focusedWindow.loadURL(`file://${__dirname}/phone_belong.html`)
       }
     }
+  }, {
+    label: '电影排行',
+    accelerator: 'Ctrl+M',
+    click: (item, focusedWindow) => {
+      if (focusedWindow) {
+        focusedWindow.loadURL(`file://${__dirname}/movie_rank.html`)
+      }
+    }
   }]
 }, {
   label: '查看',

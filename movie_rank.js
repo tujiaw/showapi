@@ -3,54 +3,81 @@
 const showapi = require('./showapi')
 const ejs = require('ejs')
 
-function boxOffice(page) {
-  $('#content').empty()
-  const url = 'http://route.showapi.com/' + page
-  showapi.request(url, 17262, {}, (json) => {
+$('#day').click(() => {
+  showapi.request('http://route.showapi.com/578-2', 17262, {}, (json) => {
     if (json.showapi_res_code == 0) {
       if (json.showapi_res_body.ret_code == 0) {
-        console.log(json.showapi_res_body.datalist)
-        let datalist = []
-        json.showapi_res_body.datalist.forEach((item) => {
-          let data = {}
-          data.Rank = item.Rank
-          data.MovieName = item.MovieName
-          data.BoxOffice = item.BoxOffice || item.WeekAmount
-          data.BoxOffice_Up = item.BoxOffice_Up || item.Amount_Up
-          data.SumBoxOffice = item.SumBoxOffice || item.SumWeekAmount
-          data.AvgPrice = item.AvgPrice
-          data.AvpPeoPle = item.AvpPeoPle || item.AvgPeople
-          data.WomIndex = item.WomIndex
-          data.MovieDay = item.MovieDay
-          datalist.push(data)
-        })
-
-        console.log(datalist)
-
+        let datalist = json.showapi_res_body.datalist
+        datalist.sort((a, b) => { return parseInt(a.Rank) - parseInt(b.Rank) })
         const html = ejs.render($('#day_box_office').html(), {datalist: datalist})
         $('#content').html(html)
       }
     }
   })
-}
-$('#day').click(() => {
-  boxOffice('578-2')
 })
 
 $('#weekend').click(() => {
-  boxOffice('578-3')
+  showapi.request('http://route.showapi.com/578-3', 17262, {}, (json) => {
+    if (json.showapi_res_code == 0) {
+      if (json.showapi_res_body.ret_code == 0) {
+        let datalist = json.showapi_res_body.datalist
+        datalist.sort((a, b) => { return parseInt(a.MovieRank) - parseInt(b.MovieRank) })
+        const html = ejs.render($('#weekend_box_office').html(), {datalist: datalist})
+        $('#content').html(html)
+      }
+    }
+  })
 })
 
 $('#week').click(() => {
-  boxOffice('578-1')
+  showapi.request('http://route.showapi.com/578-1', 17262, {}, (json) => {
+    if (json.showapi_res_code == 0) {
+      if (json.showapi_res_body.ret_code == 0) {
+        let datalist = json.showapi_res_body.datalist
+        datalist.sort((a, b) => { return parseInt(a.Rank) - parseInt(b.Rank) })
+        const html = ejs.render($('#week_box_office').html(), {datalist: datalist})
+        $('#content').html(html)
+      }
+    }
+  })
 })
 
 $('#month').click(() => {
-  boxOffice('578-4')
+  showapi.request('http://route.showapi.com/578-4', 17262, {}, (json) => {
+    if (json.showapi_res_code == 0) {
+      if (json.showapi_res_body.ret_code == 0) {
+        let datalist = json.showapi_res_body.datalist
+        datalist.sort((a, b) => { return parseInt(a.rank) - parseInt(b.rank) })
+        const html = ejs.render($('#month_box_office').html(), {datalist: datalist})
+        $('#content').html(html)
+      }
+    }
+  })
 })
 
 $('#cinema').click(() => {
+  showapi.request('http://route.showapi.com/578-6', 17262, {}, (json) => {
+    if (json.showapi_res_code == 0) {
+      if (json.showapi_res_body.ret_code == 0) {
+        let datalist = json.showapi_res_body.datalist
+        // 排序
+        datalist.sort((a, b) => { return parseInt(a.RowNum) - parseInt(b.RowNum) })
+        // 去重
+        for (let i = datalist.length - 1 ; i > 0; i--) {
+          if (datalist[i].RowNum == datalist[i - 1].RowNum) {
+            datalist.splice(i, 1)
+          }
+        }
+        const html = ejs.render($('#cinema_day_rank').html(), {datalist: datalist})
+        $('#content').html(html)
+      }
+    }
+  })
+})
 
+$('a').click((e) => {
+  $('a').css('color', '#0000ff')
+  $(e.target).css('color', '#ff0000')
 })
 
 $('#day').click();

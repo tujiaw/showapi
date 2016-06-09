@@ -51,6 +51,112 @@
       <% }) %>
     </table>
   </script>
+  <script id="weekend_box_office" type="text/template">
+    <table border="1">
+      <tr>
+        <th>排名</th>
+        <th>影片名</th>
+        <th>周末票房(万)</th>
+        <th>环比变化</th>
+        <th>累计票房(万)</th>
+        <th>平均票房</th>
+        <th>场均人次</th>
+        <th>口碑指数</th>
+        <th>上映天数</th>
+      </tr>
+      <% datalist.forEach((item) => { %>
+        <tr>
+          <td><%= item.MovieRank %></td>
+          <td><%= item.MovieName %></td>
+          <td><%= item.BoxOffice %></td>
+          <td><%= item.BoxOffice_Up %></td>
+          <td><%= item.SumBoxOffice %></td>
+          <td><%= item.AvgPrice %></td>
+          <td><%= item.AvpPeoPle %></td>
+          <td><%= item.WomIndex %></td>
+          <td><%= item.MovieDay %></td>
+        </tr>
+      <% }) %>
+    </table>
+  </script>
+  <script id="week_box_office" type="text/template">
+    <table border="1">
+      <tr>
+        <th>排名</th>
+        <th>影片名</th>
+        <th>单日票房(万)</th>
+        <th>环比变化</th>
+        <th>累计票房(万)</th>
+        <th>平均票价</th>
+        <th>场均人次</th>
+        <th>口碑指数</th>
+        <th>上映天数</th>
+      </tr>
+      <% datalist.forEach((item) => { %>
+        <tr>
+          <td><%= item.Rank %></td>
+          <td><%= item.MovieName %></td>
+          <td><%= item.WeekAmount %></td>
+          <td><%= item.Amount_Up %></td>
+          <td><%= item.SumWeekAmount %></td>
+          <td><%= item.AvgPrice %></td>
+          <td><%= item.AvpPeoPle %></td>
+          <td><%= item.WomIndex %></td>
+          <td><%= item.MovieDay %></td>
+        </tr>
+      <% }) %>
+    </table>
+  </script>
+  <script id="month_box_office" type="text/template">
+    <table border="1">
+      <tr>
+        <th>排名</th>
+        <th>影片名</th>
+        <th>单月票房(万)</th>
+        <th>月度占比</th>
+        <th>平均票价</th>
+        <th>场均人次</th>
+        <th>上映日期</th>
+        <th>月内天数</th>
+      </tr>
+      <% datalist.forEach((item) => { %>
+        <tr>
+          <td><%= item.rank %></td>
+          <td><%= item.MovieName %></td>
+          <td><%= item.boxoffice %></td>
+          <td><%= item.box_pro %></td>
+          <td><%= item.avgboxoffice %></td>
+          <td><%= item.avgshowcount %></td>
+          <td><%= item.releaseTime %></td>
+          <td><%= item.days %></td>
+        </tr>
+      <% }) %>
+    </table>
+  </script>
+  <script id="cinema_day_rank" type="text/template">
+    <table border="1">
+      <tr>
+        <th>排名</th>
+        <th>影院名称</th>
+        <th>单日票房(万)</th>
+        <th>单日场次</th>
+        <th>场均人次</th>
+        <th>场均票价(元)</th>
+        <th>上座率</th>
+      </tr>
+      <% datalist.forEach((item) => { %>
+        <tr>
+          <td><%= item.RowNum %></td>
+          <td><%= item.MovieName %></td>
+          <td><%= item.TodayBox %></td>
+          <td><%= item.TodayShowCount %></td>
+          <td><%= item.AvgPeople %></td>
+          <td><%= item.price %></td>
+          <td><%= item.Attendance %></td>
+        </tr>
+      <% }) %>
+    </table>
+  </script>
   <body>
     <div class="container">
       <div class="header">
