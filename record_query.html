@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ShowApi</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  </head>
+  <style>
+    #address {
+      width: 250px;
+    }
+    .container {
+      text-align: center;
+    }
+    .result {
+      text-align: left;
+      width: 350px;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h3>备案查询</h3>
+      <input type="text" id="address" name="address" placeholder="请输入官网">
+      <input type="button" id="query" name="query" value="查询">
+      <input type="button" id="clear" name="clear" value="清除">
+      <div class="result"></div>
+    </div>
+    <script>
+      require('./record_query')
+    </script>
+  </body>
+</html>
