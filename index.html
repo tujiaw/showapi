@@ -14,6 +14,7 @@
     }
     h3 {
       margin: 4px;
+      margin-left: 0px;
     }
     .title {
       padding: 6px;
@@ -31,7 +32,7 @@
   </style>
   <script id="func_list" type="text/template">
     <% funcList.forEach((item) => { %>
-      <div class="func">
+      <div class="func" webName="<%= item.webName %>">
         <img src="<%= item.img %>" alt="" />
         <div class="title">
           <h3><%= item.title %></h3>

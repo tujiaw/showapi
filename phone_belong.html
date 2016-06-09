@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>手机归属地查询</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  </head>
+  <style>
+    #title {
+      text-align: center;
+      margin: 10px;
+    }
+    table {
+      margin: 0px auto;
+      width: 600px;
+      text-align: center;
+    }
+  </style>
+  <script id="row" type="text/template">
+    <tr>
+      <td><%= phone_number %></td>
+      <td><%= prov %></td>
+      <td><%= city %></td>
+      <td><%= operator %></td>
+      <td><%= range %></td>
+      <td><%= prov_number %></td>
+    </tr>
+  </script>
+  <body>
+    <div class="container">
+      <div id="title">
+        <input type="text" id="phone_number" name="name" placeholder="手机号">
+        <input type="button" id="query" name="name" value="查询">
+      </div>
+      <table border="1">
+        <tr>
+          <th>手机号</th>
+          <th>省</th>
+          <th>市</th>
+          <th>运营商</th>
+          <th>号段</th>
+          <th>省别编码</th>
+        </tr>
+      </table>
+    </div>
+    <script>
+      require('./phone_belong')
+    </script>
+  </body>
+</html>

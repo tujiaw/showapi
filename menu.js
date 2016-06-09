@@ -22,6 +22,14 @@ let template = [{
         focusedWindow.loadURL(`file://${__dirname}/record_query.html`)
       }
     }
+  }, {
+    label: '手机归属地',
+    accelerator: 'Ctrl+P',
+    click: (item, focusedWindow) => {
+      if (focusedWindow) {
+        focusedWindow.loadURL(`file://${__dirname}/phone_belong.html`)
+      }
+    }
   }]
 }, {
   label: '查看',
@@ -63,9 +71,11 @@ let template = [{
     accelerator: 'CmdOrCtrl+M',
     role: 'minimize'
   }, {
-    label: '关闭',
-    accelerator: 'CmdOrCtrl+W',
-    role: 'close'
+    label: '退出',
+    accelerator: 'CmdOrCtrl+Q',
+    click: () => {
+      app.exit(0)
+    }
   }]
 }, {
   label: '帮助',
