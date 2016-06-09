@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>电影排行</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  </head>
+  <style>
+    ul {
+      list-style: none;
+      width: 410px;
+      margin: 0px auto;
+    }
+    li {
+      float: left;
+      padding-right: 10px;
+      height: 50px;
+    }
+    #content {
+      clear: both;
+      margin: 0px auto;
+      text-align: center;
+      width: 80%;
+    }
+  </style>
+  <script id="day_box_office" type="text/template">
+    <table border="1">
+      <tr>
+        <th>排名</th>
+        <th>影片名</th>
+        <th>单日票房(万)</th>
+        <th>环比变化</th>
+        <th>累计票房(万)</th>
+        <th>平均票房</th>
+        <th>场均人次</th>
+        <th>口碑指数</th>
+        <th>上映天数</th>
+      </tr>
+      <% datalist.forEach((item) => { %>
+        <tr>
+          <td><%= item.Rank %></td>
+          <td><%= item.MovieName %></td>
+          <td><%= item.BoxOffice %></td>
+          <td><%= item.BoxOffice_Up %></td>
+          <td><%= item.SumBoxOffice %></td>
+          <td><%= item.AvgPrice %></td>
+          <td><%= item.AvpPeoPle %></td>
+          <td><%= item.WomIndex %></td>
+          <td><%= item.MovieDay %></td>
+        </tr>
+      <% }) %>
+    </table>
+  </script>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul>
+          <li><a id="day" href="javascript:void(0);">单日票房</a></li>
+          <li><a id="weekend" href="javascript:void(0);">周末票房</a></li>
+          <li><a id="week" href="javascript:void(0);">单周票房</a></li>
+          <li><a id="month" href="javascript:void(0);">单月票房</a></li>
+          <li><a id="cinema" href="javascript:void(0);">影院日排行榜</a></li>
+        </ul>
+      </div>
+      <div id="content">
+      </div>
+    </div>
+    <script>
+      require('./movie_rank')
+    </script>
+  </body>
+</html>

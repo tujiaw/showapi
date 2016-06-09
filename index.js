@@ -15,6 +15,12 @@ const funcList = [
     img:'https://www.showapi.com/images/apiLogo/20150609/5423acc973f41c03173a186a_87849c4e364a4d5cbdc0c6286b5b2736.png',
     title: '手机归属地查询',
     brief: '最新手机号段数据库，手机号码归属地数据库，2015年4月3183800条'
+  },
+  {
+    webName: 'movie_rank.html',
+    img:'https://www.showapi.com/images/apiLogo/20150806/54a253186e36f6005a077bbd_88d931a475d443bea4e1bcd7e31fcc71.jpg',
+    title: '电影排行',
+    brief: '影院日排行榜，单月票房，周末票房，单日票房，单周票房'
   }
 ]
 
