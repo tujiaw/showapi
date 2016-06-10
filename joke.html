@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>笑话大全</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./thirdparty/bootstrap.min.css">
+  <script src="./thirdparty/jquery.min.js"></script>
+  <script src="./thirdparty/bootstrap.min.js"></script>
+  <style>
+    .container {
+      margin: 10px;
+    }
+    .tab-content {
+      margin: 10px;
+    }
+
+    header .title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .next_page {
+      display: block;
+      width: 80px;
+      margin: 0px auto;
+      margin-top: 6px;
+    }
+  </style>
+  <script id="text_list" type="text/template">
+    <% contentlist.forEach((item) => { %>
+      <div class="text_item">
+        <header>
+          <span class="title"><%= item.title %></span>
+          <span class="ct">(<%= item.ct %>)</span>
+        </header>
+        <p><%- item.text %></p>
+      </div>
+    <% }) %>
+    <button type="button" class="btn btn-success next_page">下一页</button>
+  </script>
+  <script id="image_list" type="text/template">
+    <% contentlist.forEach((item) => { %>
+      <div class="image_item">
+        <header>
+          <span class="title"><%= item.title %></span>
+          <span class="ct">(<%= item.ct %>)</span>
+        </header>
+        <img src="<%= item.img %>" />
+      </div>
+    <% }) %>
+    <button type="button" class="btn btn-success next_page">下一页</button>
+  </script>
+</head>
+<body>
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#text_joke" index="0">文本笑话大全</a></li>
+    <li><a href="#image_joke" index="1">图片笑话大全</a></li>
+    <!-- <li><a href="#gif_joke" index="2">动态搞笑图</a></li> -->
+  </ul>
+
+  <div class="tab-content">
+    <div id="text_joke" class="tab-pane fade in active">
+    </div>
+    <div id="image_joke" class="tab-pane fade">
+    </div>
+    <div id="gif_joke" class="tab-pane fade">
+    </div>
+  </div>
+</div>
+<script>
+  require('./joke')
+</script>
+</body>
+</html>

@@ -21,6 +21,12 @@ const funcList = [
     img:'https://www.showapi.com/images/apiLogo/20150806/54a253186e36f6005a077bbd_88d931a475d443bea4e1bcd7e31fcc71.jpg',
     title: '电影排行',
     brief: '影院日排行榜，单月票房，周末票房，单日票房，单周票房'
+  },
+  {
+    webName: 'joke.html',
+    img:'https://www.showapi.com/images/apiLogo/20150710/5423acc973f41c03173a186a_28e1f95c262749319fd093af97eaebf4.jpg',
+    title: '笑话大全',
+    brief: '笑话大全，信息搜集整理于互联网，每小时更新，包括文字笑话、搞笑图片等。'
   }
 ]
 

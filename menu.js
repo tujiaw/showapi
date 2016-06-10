@@ -38,6 +38,14 @@ let template = [{
         focusedWindow.loadURL(`file://${__dirname}/movie_rank.html`)
       }
     }
+  }, {
+    label: '笑话大全',
+    accelerator: 'Ctrl+J',
+    click: (item, focusedWindow) => {
+      if (focusedWindow) {
+        focusedWindow.loadURL(`file://${__dirname}/joke.html`)
+      }
+    }
   }]
 }, {
   label: '查看',

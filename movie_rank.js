@@ -35,6 +35,7 @@ $('#week').click(() => {
       if (json.showapi_res_body.ret_code == 0) {
         let datalist = json.showapi_res_body.datalist
         datalist.sort((a, b) => { return parseInt(a.Rank) - parseInt(b.Rank) })
+        console.log(datalist)
         const html = ejs.render($('#week_box_office').html(), {datalist: datalist})
         $('#content').html(html)
       }
