@@ -6,14 +6,21 @@ const ejs = require('ejs')
 $(".nav-tabs a").click(function(e){
     $(e.target).tab('show')
     const index = parseInt($(e.target).attr('index'))
-    if (index === 1 && imageJokeParams.page === 0) {
-      imageJokeParams.page = 1
-      imageJokeRequest()
-    } else if (index === 2 && gifJokeParams.page === 0) {
-      gifJokeParams.page = 1
-      gifJokeRequest()
-    }
+    showTab(index)
 });
+
+function showTab(index) {
+  if (index === 0 && textJokeParams.page === 0) {
+    textJokeParams.page = 1
+    textJokeRequest()
+  } else if (index === 1 && imageJokeParams.page === 0) {
+    imageJokeParams.page = 1
+    imageJokeRequest()
+  } else if (index === 2 && gifJokeParams.page === 0) {
+    gifJokeParams.page = 1
+    gifJokeRequest()
+  }
+}
 
 let textJokeParams = {
   time: '2015-07-10',
@@ -77,5 +84,4 @@ function gifJokeRequest() {
   })
 }
 
-textJokeParams.page = 1
-textJokeRequest()
+showTab(0)
