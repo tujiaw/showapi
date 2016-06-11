@@ -3,33 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>ShowApi</title>
+    <link rel="stylesheet" href="../css/index.css">
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
   </head>
-  <style>
-    img {
-      width: 60px;
-      height: 60px;
-      margin-right: 10px;
-      float: left;
-    }
-    h3 {
-      margin: 4px;
-      margin-left: 0px;
-    }
-    .title {
-      padding: 6px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .func {
-      padding: 10px;
-      cursor: pointer;
-    }
-    .func:hover {
-      background:rgb(181, 181, 181);
-    }
-  </style>
   <script id="func_list" type="text/template">
     <% funcList.forEach((item) => { %>
       <div class="func" webName="<%= item.webName %>">

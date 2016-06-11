@@ -1,0 +1,17 @@
+.container {
+  margin: 10px;
+}
+.tab-content {
+  margin: 10px;
+}
+
+header .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.next_page {
+  display: block;
+  width: 80px;
+  margin: 0px auto;
+  margin-top: 6px;
+}

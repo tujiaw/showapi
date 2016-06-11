@@ -1,0 +1,23 @@
+img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  float: left;
+}
+h3 {
+  margin: 4px;
+  margin-left: 0px;
+}
+.title {
+  padding: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.func {
+  padding: 10px;
+  cursor: pointer;
+}
+.func:hover {
+  background:rgb(181, 181, 181);
+}

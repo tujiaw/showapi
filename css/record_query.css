@@ -1,0 +1,11 @@
+#address {
+  width: 250px;
+}
+.container {
+  text-align: center;
+}
+.result {
+  text-align: left;
+  width: 350px;
+  margin: 0 auto;
+}

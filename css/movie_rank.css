@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+  width: 410px;
+  margin: 0px auto;
+}
+li {
+  float: left;
+  padding-right: 10px;
+  height: 50px;
+}
+#content {
+  clear: both;
+  margin: 0px auto;
+  text-align: center;
+  width: 80%;
+}
