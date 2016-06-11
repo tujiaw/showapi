@@ -1,6 +1,6 @@
 'use strict';
 
-const showapi = require('./showapi')
+const showapi = require('../common/showapi')
 const ejs = require('ejs')
 
 $('#query').click(() => {

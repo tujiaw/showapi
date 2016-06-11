@@ -35,5 +35,5 @@ $('.container').html(html)
 
 $('.func').click((e) => {
   const webName = $(e.target).closest('.func').attr('webName')
-  ipc.send('load_url', `file://${__dirname}/${webName}`)
+  ipc.send('load_url', `file://${__dirname}/../view/${webName}`)
 })

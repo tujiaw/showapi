@@ -1,6 +1,6 @@
 const electron = require('electron')
-const menuTemplate = require('./menu').template
-const trayTempl = require('./menu').trayTempl
+const menuTemplate = require('./js/menu').template
+const trayTempl = require('./js/menu').trayTempl
 const path = require('path')
 const {app} = electron
 const {Menu} = electron
@@ -18,7 +18,7 @@ function initMenu() {
 
 function initWindow() {
   win = new BrowserWindow({width: 700, height: 600})
-  win.loadURL(`file://${__dirname}/index.html`)
+  win.loadURL(`file://${__dirname}/view/index.html`)
   // win.webContents.openDevTools();
 
   win.on('close', (event) => {
@@ -33,7 +33,7 @@ function initWindow() {
 }
 
 function initTray() {
-  const iconPath = path.join(__dirname, 'tray.ico')
+  const iconPath = path.join(__dirname, 'image', 'tray.ico')
   tray = new Tray(iconPath)
   tray.setToolTip('show api')
   tray.setContextMenu(Menu.buildFromTemplate(trayTempl))

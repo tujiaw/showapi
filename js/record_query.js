@@ -1,6 +1,6 @@
 'use strict';
 
-const showapi = require('./showapi')
+const showapi = require('../common/showapi')
 
 $('#query').click(() => {
   const domain = $('#address').val()

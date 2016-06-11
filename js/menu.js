@@ -11,7 +11,7 @@ let template = [{
     accelerator: 'Ctrl+H',
     click: (item, focusedWindow) => {
       if (focusedWindow) {
-        focusedWindow.loadURL(`file://${__dirname}/index.html`)
+        focusedWindow.loadURL(`file://${__dirname}/../view/index.html`)
       }
     }
   }, {
@@ -19,7 +19,7 @@ let template = [{
     accelerator: 'Ctrl+B',
     click: (item, focusedWindow) => {
       if (focusedWindow) {
-        focusedWindow.loadURL(`file://${__dirname}/record_query.html`)
+        focusedWindow.loadURL(`file://${__dirname}/../view/record_query.html`)
       }
     }
   }, {
@@ -27,7 +27,7 @@ let template = [{
     accelerator: 'Ctrl+P',
     click: (item, focusedWindow) => {
       if (focusedWindow) {
-        focusedWindow.loadURL(`file://${__dirname}/phone_belong.html`)
+        focusedWindow.loadURL(`file://${__dirname}/../view/phone_belong.html`)
       }
     }
   }, {
@@ -35,7 +35,7 @@ let template = [{
     accelerator: 'Ctrl+M',
     click: (item, focusedWindow) => {
       if (focusedWindow) {
-        focusedWindow.loadURL(`file://${__dirname}/movie_rank.html`)
+        focusedWindow.loadURL(`file://${__dirname}/../view/movie_rank.html`)
       }
     }
   }, {
@@ -43,7 +43,7 @@ let template = [{
     accelerator: 'Ctrl+J',
     click: (item, focusedWindow) => {
       if (focusedWindow) {
-        focusedWindow.loadURL(`file://${__dirname}/joke.html`)
+        focusedWindow.loadURL(`file://${__dirname}/../view/joke.html`)
       }
     }
   }]
