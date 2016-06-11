@@ -1,5 +1,4 @@
 'use strict';
-
 const showapi = require('../common/showapi')
 const ejs = require('ejs')
 

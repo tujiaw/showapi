@@ -1,5 +1,4 @@
 'use strict';
-
 const ipc = require('electron').ipcRenderer
 const ejs = require('ejs')
 
@@ -27,6 +26,12 @@ const funcList = [
     img:'https://www.showapi.com/images/apiLogo/20150710/5423acc973f41c03173a186a_28e1f95c262749319fd093af97eaebf4.jpg',
     title: '笑话大全',
     brief: '笑话大全，信息搜集整理于互联网，每小时更新，包括文字笑话、搞笑图片等。'
+  },
+  {
+    webName: 'robot.html',
+    img:'https://www.showapi.com/images/apiLogo/20150604/5423acc973f41c03173a186a_6211d57da25345b2ac6f4fe9121c07c9.jpg',
+    title: '图灵机器人',
+    brief: '图灵机器人是国内第一家个性化智能机器人开放平台，为广大开发者提供免费的智能机器人API端口'
   }
 ]
 

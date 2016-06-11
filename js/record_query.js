@@ -1,5 +1,4 @@
 'use strict';
-
 const showapi = require('../common/showapi')
 
 $('#query').click(() => {

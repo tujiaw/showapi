@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>图灵机器人</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../thirdparty/bootstrap.min.css">
+    <script src="../thirdparty/jquery.min.js"></script>
+    <script src="../thirdparty/bootstrap.min.js"></script>
+    <style>
+      .container {
+        margin: 20px;
+      }
+      footer {
+        width: 100px;
+        margin: 0px auto;
+        margin-top: 10px;
+      }
+      footer button {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-horizontal" role="form">
+        <div class="form-group form-group-sm">
+          <label class="col-sm-2 control-label" for="sm">问题：</label>
+          <div class="col-sm-8">
+            <input class="form-control" type="text" id="issue" placeholder="回车提交">
+          </div>
+        </div>
+        <label for="comment">答案：</label>
+        <textarea class="form-control" rows="5" id="answer"></textarea>
+        <footer>
+          <button type="button" class="btn btn-default" id="submit">提交</button>
+        </footer>
+      </form>
+    </div>
+    <script>
+      require('../js/robot')
+    </script>
+  </body>
+</html>

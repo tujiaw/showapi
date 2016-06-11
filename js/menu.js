@@ -1,5 +1,4 @@
 'use strict';
-
 const electron = require('electron')
 const {BrowserWindow} = electron
 const {app} = electron
@@ -44,6 +43,14 @@ let template = [{
     click: (item, focusedWindow) => {
       if (focusedWindow) {
         focusedWindow.loadURL(`file://${__dirname}/../view/joke.html`)
+      }
+    }
+  }, {
+    label: '图灵机器人',
+    accelerator: 'Ctrl+T',
+    click: (item, focusedWindow) => {
+      if (focusedWindow) {
+        focusedWindow.loadURL(`file://${__dirname}/../view/robot.html`)
       }
     }
   }]
